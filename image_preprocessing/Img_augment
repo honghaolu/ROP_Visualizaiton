@@ -1,0 +1,87 @@
+#Step 2: Image augmentation using the ImageDataGenerator function
+
+import os
+import random
+import shutil
+
+import numpy as np
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+
+def img_gen_augm(dataset_path,img_save_dir,mask_save_dir):
+    # ======1. Define Image Generator (Parameters)============================
+    #Generate 1000 images with the following parameters
+    generator_args = dict(
+        #rescale
+        #samplewise_center=True,
+        #samplewise_std_normalization=True,
+        zca_whitening=True,
+        zca_epsilon=1e-6,
+        rotation_range=random.randint(0, 359),
+        width_shift_range=0.1,
+        height_shift_range=0.1,
+        zoom_range=0.1,
+        shear_range=5,
+        horizontal_flip=True,
+        vertical_flip=True,
+        channel_shift_range=0.1,
+        fill_mode='constant',
+    )
+
+    # =====2、Construct generator objects, ImageDataGenerator performs image augmentation on fundus images and mask images======
+    img_datagen = ImageDataGenerator(**generator_args)
+    mask_datagen = ImageDataGenerator(**generator_args)
+
+    # ====3、 Implement image augmentatio=====================================================
+    Seed=123
+    Target_size = (512, 512)
+    Batch_size=5
+    img_generator = img_datagen.flow_from_directory(
+        dataset_path,  # Dataset path (parent folder for fundus and mask images)
+        classes=['images_preprocess'],  # Folder for fundus images
+        class_mode=None,
+        color_mode='grayscale',
+        target_size=Target_size,
+        batch_size=Batch_size,
+        save_to_dir=img_save_dir,
+        seed=Seed)
+    mask_generator = mask_datagen.flow_from_directory(
+        dataset_path,
+        classes=['masks'],
+        class_mode=None,
+        color_mode='grayscale',
+        target_size=Target_size,
+        batch_size=Batch_size,
+        save_to_dir=mask_save_dir,
+        seed=Seed)
+
+    # Combine the generator into a generator that produces images and masks
+    gen_augm = zip(img_generator, mask_generator)  #Generator performs paired synchronous processing on fundus and mask images
+
+    count = 1
+
+    for image, mask in gen_augm:
+        print(np.shape(image), np.shape(mask))
+        count += 1
+        if count > 200:
+            break
+
+
+if __name__ == '__main__':
+    #parent folder for fundus and mask images
+    dataset_path = "../dataset/img_mask"
+    # Path for saving fundus and mask images
+    img_save_dir = "dataset\images_preprocess_augment"
+    mask_save_dir = "dataset\masks_augment"
+
+    #If the saved folder exists, delete it first and then create it again
+    if os.path.exists(img_save_dir):
+        shutil.rmtree(img_save_dir)
+    if os.path.exists(mask_save_dir):
+        shutil.rmtree(mask_save_dir)
+
+    os.makedirs(img_save_dir, exist_ok=True)
+    os.makedirs(mask_save_dir, exist_ok=True)
+
+    img_gen_augm(dataset_path, img_save_dir, mask_save_dir)
+
