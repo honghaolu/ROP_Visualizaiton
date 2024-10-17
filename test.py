@@ -1,4 +1,4 @@
-#Step 5: test
+#Step 6: test
 
 from tqdm import tqdm
 from utils_metrics import compute_mIoU, show_results
