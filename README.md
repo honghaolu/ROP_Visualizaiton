@@ -30,7 +30,6 @@ Get training set and validation set data.
 ### Step 5: train.py
 The experiment was based on Python 3.8.19, Torch 1.11.0, Cuda113 to build a deep learning framework. The platform configuration for model training is: NVIDIA GeForce RTX 4060. During the training process, the optimizer uses RMSprop (Root Mean Square Propagation), the initial learning rate is 1e-5, the momentum is 0.9, the epoch is 20, the batch size is 2, the image input size is 512×512, and the loss function is the binary cross entropy loss function (BCEWithLogitsLoss). 
 ![Training and Validation LOSS](https://github.com/user-attachments/assets/60830d19-6ecd-4b58-b831-012b7bd85198)
-![Training and Validation IoU](https://github.com/user-attachments/assets/a344aa1a-9d0a-41f3-b14a-c64cef36ecf5)
 
 ## 3. Model evaluation
 
