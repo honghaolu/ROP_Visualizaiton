@@ -1,4 +1,4 @@
-#Step 6: Visualization of ROP: Generate target bounding boxes and draw lesion contours
+#Step 8: Visualization of ROP: Generate target bounding boxes and draw lesion contours
 import cv2
 import matplotlib.pyplot as plt
 
