@@ -1,4 +1,4 @@
-#Step 4: Model Training
+#Step 5: Model Training
 #Evaluate the loss and IOU of the training set and validation set. IOU can more intuitively monitor the training effect of the model
 
 from model.LDA_UNet import U_Net_CBAM
