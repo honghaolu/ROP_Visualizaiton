@@ -1,4 +1,4 @@
-#Design LDA-UNet model
+#Step 4: Design LDA-UNet model
 #lightweighted unet: Replace standard convolution with depthwise separable convolution,
 #                    Change the four layer network to three layers
 #                    Half the number of channels in Unet
