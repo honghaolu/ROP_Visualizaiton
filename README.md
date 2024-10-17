@@ -14,9 +14,15 @@ we use the ImageDataGenerator function from the Tensorflow library to augment bo
 1000 preprocessed images and 1000 mask images are stored in [DOI: 10.6084/m9.figshare.27229680.](https://doi.org/10.6084/m9.figshare.27229680.v2)
 ## 2. Model(LDA-UNet) training 
 
-Step 3: dataset, Get training set and validation set data.
+### Step 3: dataset.py
+Get training set and validation set data.
 
-Step 4: model.LDA-UNet, Design LDA-UNet model.
+### Step 4: model.LDA_UNet.py
+ Design LDA-UNet model:
+ lightweighted unet: Replace standard convolution with depthwise separable convolution.
+ Dilated convolution: downsampling and upsampling dilated convolution are symmetric[1, 2, 4, 2, 1]
+ Attention Mechanism: CBAM follows the convolutional block in each encoding stage and is outputted via an addition operation.
+![image](https://github.com/user-attachments/assets/018b2ec2-4e42-41ad-ba8b-f2043f412b2a)
 
 ## Phase 3: Model evaluation
 
