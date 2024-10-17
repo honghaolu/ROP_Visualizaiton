@@ -40,7 +40,12 @@ Evaluate the model's mIoU, recall, precision, accuracy, etc. in the test set.
 
 ## 4. ROP visalization
 
-### Step 6: ROP_Visualization.py
+### Step 7: pred.py
+Predicting mask image based on fundus image.
+![Figure_1](https://github.com/user-attachments/assets/47991fcb-d59b-408b-9c16-713dd83cc2bf)
+
+### Step 8: ROP_Visualization.py
+According to the predicted mask image, the contour of the ROP is delineated and the rectangular box of the ROP is located, thereby realizing the visualization of the ROP.
 Visualization of ROP,Generate target bounding boxes and draw lesion contours.
 ![image](https://github.com/user-attachments/assets/54ec07e5-5003-4c70-a00c-4bdfaab4b2df)
 
