@@ -1,6 +1,5 @@
 # ROP visualization
 This project proposed a lightweight UNet model for localizing ROP that incorporates multi-scale dilated convolution and attention mechanism. First, the LDA-UNet lightweight network is designed. The model has small parameters and strong detail segmentation ability, which alleviates the issue of information loss and effectively improves the segmentation accuracy of the ROP demarcation/ridge. Then, LDA-UNet is combined with a contour detection algorithm to form an object visualization model, which can accurately locate the lesion area and delineate the lesion contour, thereby achieving visualization of CNN-assisted ROP diagnosis, and improve the interpretability and credibility of the model.
-![image](https://github.com/user-attachments/assets/7fa654ed-e3d1-4a41-8f59-17d74bc18792)
 
 
 ## 1. Dataset and preprocessing (Folder: Image Preprocessing).
@@ -14,7 +13,10 @@ We used image enhancement techniques such as normalization,Contrast Limited Adap
 we use the ImageDataGenerator function from the Tensorflow library to augment both images and masks by 20 times. To minimize image contamination and ensure that each image is unique, the augmentation methods included random rotation, horizontal and vertical shifting, scaling, cropping, horizontal and vertical flipping, and adjusting channel pixel values to simulate different lighting conditions. Ultimately, 1,000 images were obtained, each with a size of 512 x 512 pixels, and the dataset was split into training and testing sets in an 8:2 ratio. 
 ![image](https://github.com/user-attachments/assets/07b0f5d0-fc02-42cf-b3f3-5ea246c81a45)
 
-1000 preprocessed images and 1000 mask images are stored in [DOI: 10.6084/m9.figshare.27229680.](https://doi.org/10.6084/m9.figshare.27229680.v2)
+1000 preprocessed images and 1000 mask images are stored in [DOI: 10.6084/m9.figshare.27229680.](https://doi.org/10.6084/m9.figshare.27229680.v2)divided into a training set of 800 images and a testing set of 200 images.
+
+![image](https://github.com/user-attachments/assets/e4b566ce-81e1-4e1f-b262-e9d0e07cd8db)
+
 ## 2. Model(LDA-UNet) design and training 
 
 ### Step 3: dataset.py
@@ -47,5 +49,7 @@ Predicting mask image based on fundus image.
 ### Step 8: ROP_Visualization.py
 According to the predicted mask image, the contour of the ROP is delineated and the rectangular box of the ROP is located, thereby realizing the visualization of the ROP.
 Visualization of ROP,Generate target bounding boxes and draw lesion contours.
-![image](https://github.com/user-attachments/assets/54ec07e5-5003-4c70-a00c-4bdfaab4b2df)
+![Figure_1](https://github.com/user-attachments/assets/93219539-0d64-4782-abbb-194548d5d5b9)
+
+
 
