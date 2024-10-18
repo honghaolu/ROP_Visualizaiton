@@ -52,7 +52,17 @@ Visualization of ROP,Generate target bounding boxes and draw lesion contours.
 ![Figure_1](https://github.com/user-attachments/assets/93219539-0d64-4782-abbb-194548d5d5b9)
 
 ## 5. Comparative experiment (Folder: model)
-To validate the effectiveness of LDA-UNet, we selected four current typical lightweight UNet models for comparison. The selected models include: Unet is a lightweight version of the UNet model with the number of channels in the decoder reduced by half. Mobile_UNet is a typical representative of lightweight CNN using DSConv. GhostU_Net is a model that employs a ghost module to generate more features with fewer parameters and reduce computation. GhostU_Net2 is an upgraded version of GhostU_Net with even fewer parameters. 
+To validate the effectiveness of LDA-UNet, we selected four current typical lightweight UNet models for comparison. 
+
+The selected models include: 
+
+unet.py: Unet is a lightweight version of the UNet model with the number of channels in the decoder reduced by half. 
+
+Mobile_UMet.py: Mobile_UNet is a typical representative of lightweight CNN using DSConv. 
+
+GhostU_Net.py(class GhostU_Net): GhostU_Net is a model that employs a ghost module to generate more features with fewer parameters and reduce computation. 
+
+GhostU_Net.py(class GhostU_Net2): GhostU_Net2 is an upgraded version of GhostU_Net with even fewer parameters. 
 
 ![image](https://github.com/user-attachments/assets/8ff35268-ec9d-4b32-bf65-9d445371d8fb)
 
