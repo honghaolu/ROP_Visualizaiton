@@ -15,7 +15,8 @@ we use the ImageDataGenerator function from the Tensorflow library to augment bo
 
 1000 preprocessed images and 1000 mask images are stored in [DOI: 10.6084/m9.figshare.27229680.](https://doi.org/10.6084/m9.figshare.27229680.v2)divided into a training set of 800 images and a testing set of 200 images.
 
-![image](https://github.com/user-attachments/assets/e4b566ce-81e1-4e1f-b262-e9d0e07cd8db)
+![image](https://github.com/user-attachments/assets/28ffc794-03b2-43d8-b883-cbc4a8e49493)
+
 
 ## 2. Model(LDA-UNet) design and training 
 
