@@ -53,7 +53,7 @@ Visualization of ROP,Generate target bounding boxes and draw lesion contours.
 ![Figure_1](https://github.com/user-attachments/assets/93219539-0d64-4782-abbb-194548d5d5b9)
 
 ## 5. Comparative experiment (Folder: model)
-To validate the effectiveness of LDA-UNet, we selected four current typical lightweight UNet models for comparison. 
+5.1 To validate the effectiveness of LDA-UNet, we selected four current typical lightweight UNet models for comparison. (images size 512*512)
 
 The selected models include: 
 
@@ -67,6 +67,10 @@ GhostU_Net.py(class GhostU_Net2): GhostU_Net2 is an upgraded version of GhostU_N
 
 ![image](https://github.com/user-attachments/assets/8ff35268-ec9d-4b32-bf65-9d445371d8fb)
 
+5.2 To further evaluate the superiority of LDA-UNet, we compared it with newer Transformer-based hybrid architecture TransUNet. (images size 128*128)
 
+TransUNet is a state-of-the-art model for medical image segmentation that combines the powerful ability to learn high-level semantic features and low-level details.
+
+![image](https://github.com/user-attachments/assets/f98b4ffb-11e2-4f65-885d-5661b94910a4)
 
 
